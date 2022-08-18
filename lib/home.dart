@@ -9,6 +9,8 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage> {
+  int _selectedIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -38,7 +40,7 @@ class HomePageState extends State<HomePage> {
             Container(
               margin: const EdgeInsets.only(right: 7),
               child: IconButton(
-                icon: const Icon(Icons.pie_chart),
+                icon: const Icon(Icons.person),
                 onPressed: () => {},
               ),
             ),
@@ -64,7 +66,39 @@ class HomePageState extends State<HomePage> {
             ],
           ),
         ),
-        backgroundColor: const Color(0xFF000000),
+        bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          backgroundColor: const Color(0xFF000000),
+          selectedItemColor: Colors.white,
+          unselectedItemColor: Colors.white.withOpacity(.60),
+          selectedFontSize: 14,
+          unselectedFontSize: 14,
+          currentIndex: _selectedIndex, //현재 선택된 Index
+          onTap: (int index) {
+            setState(() {
+              _selectedIndex = index;
+            });
+          },
+          items: const [
+            BottomNavigationBarItem(
+              label: '홈',
+              icon: Icon(Icons.home_filled),
+            ),
+            BottomNavigationBarItem(
+              label: '공개예정',
+              icon: Icon(Icons.music_note),
+            ),
+            BottomNavigationBarItem(
+              label: '검색',
+              icon: Icon(Icons.search),
+            ),
+            BottomNavigationBarItem(
+              label: '기록',
+              icon: Icon(Icons.schedule),
+            ),
+          ],
+        ),
+        backgroundColor: const Color(0xFF141414),
         body: TabBarView(
           children: <Widget>[
             ListView(
@@ -86,7 +120,7 @@ class HomePageState extends State<HomePage> {
                           children: [
                             Container(
                               padding:
-                                  const EdgeInsets.only(top: 410, left: 15),
+                                  const EdgeInsets.only(top: 395, left: 15),
                               child: const Text(
                                   '우리는 모두 세포들의 주인공이다\n김고은x안보현의 세포자극 로맨스 💖',
                                   style: TextStyle(color: Color(0xFFECECEC))),
@@ -119,6 +153,7 @@ class HomePageState extends State<HomePage> {
                           child: const Text('티빙에서 꼭 봐야하는 콘텐츠',
                               style: TextStyle(
                                   color: Color(0xFFECECEC),
+                                  fontSize: 13,
                                   fontWeight: FontWeight.bold)),
                         ),
                         Row(
@@ -126,17 +161,20 @@ class HomePageState extends State<HomePage> {
                             Container(
                               padding: const EdgeInsets.only(top: 25, right: 3),
                               child: const Text('전체보기',
-                                  style: TextStyle(color: Color(0xFF6D6D6D))),
+                                  style: TextStyle(
+                                    color: Color(0xFF6D6D6D),
+                                    fontSize: 13,
+                                  )),
                             ),
                             Container(
                               padding:
-                                  const EdgeInsets.only(top: 25, right: 15),
+                                  const EdgeInsets.only(top: 23, right: 15),
                               child: IconButton(
                                 padding: EdgeInsets.zero,
                                 constraints: const BoxConstraints(),
                                 icon: const Icon(Icons.arrow_forward_ios),
                                 color: const Color(0xFF6D6D6D),
-                                iconSize: 15.0,
+                                iconSize: 13.0,
                                 onPressed: () {},
                               ),
                             ),
@@ -171,7 +209,7 @@ class HomePageState extends State<HomePage> {
                                         const EdgeInsets.only(top: 5, left: 15),
                                     child: const Text('환승연애2',
                                         style: TextStyle(
-                                            fontSize: 12,
+                                            fontSize: 11,
                                             color: Color(0xFF6D6D6D))),
                                   ),
                                 ],
@@ -193,9 +231,9 @@ class HomePageState extends State<HomePage> {
                                   Container(
                                     padding:
                                         const EdgeInsets.only(top: 5, left: 15),
-                                    child: const Text('놀라운토요일',
+                                    child: const Text('놀라운 토요일',
                                         style: TextStyle(
-                                            fontSize: 12,
+                                            fontSize: 11,
                                             color: Color(0xFF6D6D6D))),
                                   ),
                                 ],
@@ -217,9 +255,9 @@ class HomePageState extends State<HomePage> {
                                   Container(
                                     padding:
                                         const EdgeInsets.only(top: 5, left: 10),
-                                    child: const Text('아는형님',
+                                    child: const Text('아는 형님',
                                         style: TextStyle(
-                                            fontSize: 12,
+                                            fontSize: 11,
                                             color: Color(0xFF6D6D6D))),
                                   ),
                                 ],
@@ -241,9 +279,155 @@ class HomePageState extends State<HomePage> {
                                   Container(
                                     padding:
                                         const EdgeInsets.only(top: 5, left: 10),
-                                    child: const Text('유퀴즈 온더 블럭',
+                                    child: const Text('유 퀴즈 온 더 블럭',
                                         style: TextStyle(
-                                            fontSize: 12,
+                                            fontSize: 11,
+                                            color: Color(0xFF6D6D6D))),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.only(top: 25, left: 15),
+                          child: const Text('실시간 인기 프로그램',
+                              style: TextStyle(
+                                  color: Color(0xFFECECEC),
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.bold)),
+                        ),
+                        Row(
+                          children: [
+                            Container(
+                              padding: const EdgeInsets.only(top: 25, right: 3),
+                              child: const Text('전체보기',
+                                  style: TextStyle(
+                                    color: Color(0xFF6D6D6D),
+                                    fontSize: 13,
+                                  )),
+                            ),
+                            Container(
+                              padding:
+                                  const EdgeInsets.only(top: 23, right: 15),
+                              child: IconButton(
+                                padding: EdgeInsets.zero,
+                                constraints: const BoxConstraints(),
+                                icon: const Icon(Icons.arrow_forward_ios),
+                                color: const Color(0xFF6D6D6D),
+                                iconSize: 13.0,
+                                onPressed: () {},
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 180,
+                      child: ListView(
+                        padding: const EdgeInsets.all(0),
+                        scrollDirection: Axis.horizontal,
+                        children: [
+                          Row(
+                            children: [
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    margin: const EdgeInsets.only(
+                                        top: 10, left: 15),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(5.0),
+                                      child: Image.asset(
+                                        'image/program1.png',
+                                        width: 100,
+                                      ),
+                                    ),
+                                  ),
+                                  Container(
+                                    padding:
+                                        const EdgeInsets.only(top: 5, left: 15),
+                                    child: const Text('환승연애2',
+                                        style: TextStyle(
+                                            fontSize: 11,
+                                            color: Color(0xFF6D6D6D))),
+                                  ),
+                                ],
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    margin: const EdgeInsets.only(
+                                        top: 10, left: 15),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(5.0),
+                                      child: Image.asset(
+                                        'image/program2.png',
+                                        width: 100,
+                                      ),
+                                    ),
+                                  ),
+                                  Container(
+                                    padding:
+                                        const EdgeInsets.only(top: 5, left: 15),
+                                    child: const Text('놀라운 토요일',
+                                        style: TextStyle(
+                                            fontSize: 11,
+                                            color: Color(0xFF6D6D6D))),
+                                  ),
+                                ],
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    margin: const EdgeInsets.only(
+                                        top: 10, left: 10),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(5.0),
+                                      child: Image.asset(
+                                        'image/program3.png',
+                                        width: 100,
+                                      ),
+                                    ),
+                                  ),
+                                  Container(
+                                    padding:
+                                        const EdgeInsets.only(top: 5, left: 10),
+                                    child: const Text('아는 형님',
+                                        style: TextStyle(
+                                            fontSize: 11,
+                                            color: Color(0xFF6D6D6D))),
+                                  ),
+                                ],
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    margin: const EdgeInsets.only(
+                                        top: 10, left: 10, right: 15),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(5.0),
+                                      child: Image.asset(
+                                        'image/program4.png',
+                                        width: 100,
+                                      ),
+                                    ),
+                                  ),
+                                  Container(
+                                    padding:
+                                        const EdgeInsets.only(top: 5, left: 10),
+                                    child: const Text('유 퀴즈 온 더 블럭',
+                                        style: TextStyle(
+                                            fontSize: 11,
                                             color: Color(0xFF6D6D6D))),
                                   ),
                                 ],
