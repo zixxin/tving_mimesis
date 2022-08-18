@@ -69,30 +69,56 @@ class HomePageState extends State<HomePage> {
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           backgroundColor: const Color(0xFF000000),
-          selectedItemColor: Colors.white,
-          unselectedItemColor: Colors.white.withOpacity(.60),
-          selectedFontSize: 14,
-          unselectedFontSize: 14,
-          currentIndex: _selectedIndex, //현재 선택된 Index
+          selectedItemColor: const Color(0xFFFFFFFF),
+          unselectedItemColor: const Color(0xFF666666),
+          selectedFontSize: 10,
+          unselectedFontSize: 10,
+          currentIndex: _selectedIndex,
           onTap: (int index) {
             setState(() {
               _selectedIndex = index;
             });
           },
-          items: const [
-            BottomNavigationBarItem(
+          items: [
+            const BottomNavigationBarItem(
               label: '홈',
               icon: Icon(Icons.home_filled),
             ),
             BottomNavigationBarItem(
               label: '공개예정',
-              icon: Icon(Icons.music_note),
+              icon: Stack(
+                children: <Widget>[
+                  const Icon(Icons.smart_display_rounded),
+                  Positioned(
+                    right: 0,
+                    child: Container(
+                      padding: const EdgeInsets.all(0),
+                      decoration: BoxDecoration(
+                        color: const Color(0xFFFE0302),
+                        borderRadius: BorderRadius.circular(6),
+                      ),
+                      constraints: const BoxConstraints(
+                        minWidth: 12,
+                        minHeight: 12,
+                      ),
+                      child: const Text(
+                        '6',
+                        style: TextStyle(
+                          color: Color(0xFFFFFFFF),
+                          fontSize: 10,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  )
+                ],
+              ),
             ),
-            BottomNavigationBarItem(
+            const BottomNavigationBarItem(
               label: '검색',
               icon: Icon(Icons.search),
             ),
-            BottomNavigationBarItem(
+            const BottomNavigationBarItem(
               label: '기록',
               icon: Icon(Icons.schedule),
             ),
