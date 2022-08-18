@@ -329,15 +329,51 @@ class HomePageState extends State<HomePage> {
                       ],
                     ),
                     SizedBox(
-                      height: 180,
+                      height: 190,
                       child: ListView(
                         padding: const EdgeInsets.all(0),
                         scrollDirection: Axis.horizontal,
                         children: [
                           Row(
                             children: [
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
+                              Stack(
+                                children: [
+                                  Container(
+                                    margin: const EdgeInsets.only(
+                                        top: 10, left: 15),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(5.0),
+                                      child: Image.asset(
+                                        'image/program6.png',
+                                        width: 100,
+                                      ),
+                                    ),
+                                  ),
+                                  Row(
+                                    children: [
+                                      Container(
+                                        padding: const EdgeInsets.only(
+                                            top: 135, left: 15),
+                                        child: const Text('1',
+                                            style: TextStyle(
+                                                fontSize: 35,
+                                                fontWeight: FontWeight.bold,
+                                                fontStyle: FontStyle.italic,
+                                                color: Color(0xFFFFFFFF))),
+                                      ),
+                                      Container(
+                                        padding: const EdgeInsets.only(
+                                            top: 155, left: 5),
+                                        child: const Text('유미의 세포들2',
+                                            style: TextStyle(
+                                                fontSize: 11,
+                                                color: Color(0xFF6D6D6D))),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                              Stack(
                                 children: [
                                   Container(
                                     margin: const EdgeInsets.only(
@@ -350,22 +386,72 @@ class HomePageState extends State<HomePage> {
                                       ),
                                     ),
                                   ),
-                                  Container(
-                                    padding:
-                                        const EdgeInsets.only(top: 5, left: 15),
-                                    child: const Text('환승연애2',
-                                        style: TextStyle(
-                                            fontSize: 11,
-                                            color: Color(0xFF6D6D6D))),
+                                  Row(
+                                    children: [
+                                      Container(
+                                        padding: const EdgeInsets.only(
+                                            top: 135, left: 15),
+                                        child: const Text('2',
+                                            style: TextStyle(
+                                                fontSize: 35,
+                                                fontWeight: FontWeight.bold,
+                                                fontStyle: FontStyle.italic,
+                                                color: Color(0xFFFFFFFF))),
+                                      ),
+                                      Container(
+                                        padding: const EdgeInsets.only(
+                                            top: 155, left: 5),
+                                        child: const Text('환승연애2',
+                                            style: TextStyle(
+                                                fontSize: 11,
+                                                color: Color(0xFF6D6D6D))),
+                                      ),
+                                    ],
                                   ),
                                 ],
                               ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
+                              Stack(
                                 children: [
                                   Container(
                                     margin: const EdgeInsets.only(
-                                        top: 10, left: 15),
+                                        top: 10, left: 10),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(5.0),
+                                      child: Image.asset(
+                                        'image/program5.png',
+                                        width: 100,
+                                      ),
+                                    ),
+                                  ),
+                                  Row(
+                                    children: [
+                                      Container(
+                                        padding: const EdgeInsets.only(
+                                            top: 135, left: 15),
+                                        child: const Text('3',
+                                            style: TextStyle(
+                                                fontSize: 35,
+                                                fontWeight: FontWeight.bold,
+                                                fontStyle: FontStyle.italic,
+                                                color: Color(0xFFFFFFFF))),
+                                      ),
+                                      Container(
+                                        padding: const EdgeInsets.only(
+                                            top: 155, left: 5),
+                                        child: const Text('신서유기7',
+                                            style: TextStyle(
+                                                fontSize: 11,
+                                                color: Color(0xFF6D6D6D))),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                              Stack(
+                                children: [
+                                  Container(
+                                    margin: const EdgeInsets.only(
+                                        top: 10, left: 10, right: 15),
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(5.0),
                                       child: Image.asset(
@@ -374,61 +460,27 @@ class HomePageState extends State<HomePage> {
                                       ),
                                     ),
                                   ),
-                                  Container(
-                                    padding:
-                                        const EdgeInsets.only(top: 5, left: 15),
-                                    child: const Text('놀라운 토요일',
-                                        style: TextStyle(
-                                            fontSize: 11,
-                                            color: Color(0xFF6D6D6D))),
-                                  ),
-                                ],
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Container(
-                                    margin: const EdgeInsets.only(
-                                        top: 10, left: 10),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(5.0),
-                                      child: Image.asset(
-                                        'image/program3.png',
-                                        width: 100,
+                                  Row(
+                                    children: [
+                                      Container(
+                                        padding: const EdgeInsets.only(
+                                            top: 135, left: 15),
+                                        child: const Text('4',
+                                            style: TextStyle(
+                                                fontSize: 35,
+                                                fontWeight: FontWeight.bold,
+                                                fontStyle: FontStyle.italic,
+                                                color: Color(0xFFFFFFFF))),
                                       ),
-                                    ),
-                                  ),
-                                  Container(
-                                    padding:
-                                        const EdgeInsets.only(top: 5, left: 10),
-                                    child: const Text('아는 형님',
-                                        style: TextStyle(
-                                            fontSize: 11,
-                                            color: Color(0xFF6D6D6D))),
-                                  ),
-                                ],
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Container(
-                                    margin: const EdgeInsets.only(
-                                        top: 10, left: 10, right: 15),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(5.0),
-                                      child: Image.asset(
-                                        'image/program4.png',
-                                        width: 100,
+                                      Container(
+                                        padding: const EdgeInsets.only(
+                                            top: 155, left: 5),
+                                        child: const Text('놀라운 토요일',
+                                            style: TextStyle(
+                                                fontSize: 11,
+                                                color: Color(0xFF6D6D6D))),
                                       ),
-                                    ),
-                                  ),
-                                  Container(
-                                    padding:
-                                        const EdgeInsets.only(top: 5, left: 10),
-                                    child: const Text('유 퀴즈 온 더 블럭',
-                                        style: TextStyle(
-                                            fontSize: 11,
-                                            color: Color(0xFF6D6D6D))),
+                                    ],
                                   ),
                                 ],
                               ),
@@ -437,6 +489,7 @@ class HomePageState extends State<HomePage> {
                         ],
                       ),
                     ),
+                    const SizedBox(height: 10),
                   ],
                 ),
               ],
