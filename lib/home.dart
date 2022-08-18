@@ -46,6 +46,7 @@ class HomePageState extends State<HomePage> {
             ),
           ],
           backgroundColor: Colors.transparent,
+          // backgroundColor: const Color(0xFF27B3C0),
           bottom: const TabBar(
             indicatorWeight: 2.0,
             indicatorColor: Color(0xFFFFFFFF),
@@ -355,7 +356,7 @@ class HomePageState extends State<HomePage> {
                       ],
                     ),
                     SizedBox(
-                      height: 190,
+                      height: 180,
                       child: ListView(
                         padding: const EdgeInsets.all(0),
                         scrollDirection: Axis.horizontal,
