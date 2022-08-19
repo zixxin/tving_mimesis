@@ -18,7 +18,9 @@ class HomePageState extends State<HomePage> {
     if (_scrollController.offset ==
             _scrollController.position.minScrollExtent &&
         !_scrollController.position.outOfRange) {
-      print('스크롤이 맨 위에 위치해 있습니다');
+      setState(() {
+        changeColor = false;
+      });
     } else {
       setState(() {
         changeColor = true;
@@ -48,7 +50,7 @@ class HomePageState extends State<HomePage> {
       elevation: 0.0,
       floating: true,
       pinned: true,
-      snap: false,
+      snap: true,
       title: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
@@ -72,9 +74,8 @@ class HomePageState extends State<HomePage> {
           ),
         ),
       ],
-      // backgroundColor: Colors.transparent,
       backgroundColor:
-          changeColor ? const Color(0xFF141414) : Colors.transparent,
+          changeColor ? const Color(0xFF141414) : const Color(0xFF24B2BF),
       bottom: const TabBar(
         indicatorWeight: 2.0,
         indicatorColor: Color(0xFFFFFFFF),
@@ -240,7 +241,7 @@ Widget mainScreen(BuildContext context) {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                padding: const EdgeInsets.only(top: 395, left: 15),
+                padding: const EdgeInsets.only(top: 260, left: 15),
                 child: const Text('우리는 모두 세포들의 주인공이다\n김고은x안보현의 세포자극 로맨스 💖',
                     style: TextStyle(color: Color(0xFFECECEC))),
               ),
