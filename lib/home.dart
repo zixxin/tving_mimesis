@@ -11,6 +11,38 @@ class HomePage extends StatefulWidget {
 class HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
 
+  final ScrollController _scrollController = ScrollController();
+  bool changeColor = false;
+
+  scrollListener() async {
+    if (_scrollController.offset ==
+            _scrollController.position.minScrollExtent &&
+        !_scrollController.position.outOfRange) {
+      print('스크롤이 맨 위에 위치해 있습니다');
+    } else {
+      setState(() {
+        changeColor = true;
+      });
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+
+    _scrollController.addListener(() {
+      setState(() {
+        changeColor = true;
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
+
   SliverAppBar showSliverAppBar() {
     return SliverAppBar(
       elevation: 0.0,
@@ -40,8 +72,9 @@ class HomePageState extends State<HomePage> {
           ),
         ),
       ],
-      backgroundColor: Colors.transparent,
-      // backgroundColor: const Color(0xFF27B3C0),
+      // backgroundColor: Colors.transparent,
+      backgroundColor:
+          changeColor ? const Color(0xFF141414) : Colors.transparent,
       bottom: const TabBar(
         indicatorWeight: 2.0,
         indicatorColor: Color(0xFFFFFFFF),
@@ -132,6 +165,7 @@ class HomePageState extends State<HomePage> {
           child: TabBarView(
             children: <Widget>[
               CustomScrollView(
+                controller: _scrollController,
                 slivers: [
                   showSliverAppBar(),
                   SliverList(
