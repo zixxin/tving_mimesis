@@ -67,10 +67,15 @@ class HomePageState extends State<HomePage> {
           onPressed: () => {},
         ),
         Container(
-          margin: const EdgeInsets.only(left: 10, right: 20),
-          child: Image.asset(
-            'image/profile.png',
-            width: 30,
+          margin: const EdgeInsets.only(right: 15),
+          child: IconButton(
+            padding: EdgeInsets.zero,
+            icon: Image.asset(
+              width: 30,
+              'image/profile.png',
+            ),
+            iconSize: 30,
+            onPressed: () {},
           ),
         ),
       ],
